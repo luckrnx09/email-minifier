@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`email-minifier Snapshots should minify email correctly 1`] = `
+"<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <style>.a{font-size:16px}.b{font-size:16px!important}#a,.c,.d,div[dt=""],div[dti]{font-size:16px}@media only screen and (min-width:481px){.d{font-size:16px}}@media (prefers-color-scheme:dark){.d{font-size:16px}}</style>
+  </head>
+  <body>
+    <div>
+      My class will be removed
+    </div>
+    <div class="a">
+      My class will be minified as a single char
+    </div>
+    <div class="b c">My Class will be minified as two single chars</div>
+    <div class="c d">
+      My first class will be reuse, and second one will be minified as a
+      single char
+      
+    </div>
+    <div id="a">
+      My id will be minified as a single char
+    </div>
+    <div dt="" dti="">
+      My first dataset attribute will be minified as \`dt=""\` and the second
+      one will be minified as \`dti=""\`
+    </div>
+    <div>My contenteditable attribute will be removed</div>
+  
+
+</body></html>"
+`;
