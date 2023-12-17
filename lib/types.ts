@@ -57,3 +57,9 @@ export type TaskType =
   | 'minify-dataset-attrs'
   | 'remove-unused-attrs'
   | 'minify-styles';
+
+export type MinifyResult = {
+  original: string;
+  minified: string | null;
+  tasks: Task[];
+};

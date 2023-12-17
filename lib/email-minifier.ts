@@ -1,7 +1,7 @@
 import { Sequence } from './sequence';
 import { createDocument } from './document';
 import { TaskManager } from './task-manager';
-import { Context, ComposeOption } from './types';
+import { Context, ComposeOption, MinifyResult } from './types';
 
 const DEFAULT_COMPOSE_OPTIONS: ComposeOption = {
   minifyIds: true,
@@ -77,7 +77,7 @@ export class EmailMinifier {
     };
   }
 
-  async minify(options?: ComposeOption) {
+  async minify(options?: ComposeOption): Promise<MinifyResult> {
     const context = await this.createContext();
     const taskManager = this.compose(context, options);
     const { originalEmailBody, document } = context;
