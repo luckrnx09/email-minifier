@@ -36,7 +36,8 @@
   "scripts": {
     "lint": "npx eslint . --fix",
     "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
