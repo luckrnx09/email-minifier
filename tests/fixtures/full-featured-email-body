@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style>
+      /* extra white spaces below will be removed */
+
+
+
+      .class-very-very-long {
+        font-size: 16px;
+      }
+      .class1 {
+        font-size: 16px  !important;
+      }
+      .class2 {
+        /** single-line comment will be removed **/
+        font-size: 16px;
+      }
+      .class3 {
+        /** multiple-lines comment also 
+            will be removed **/
+        font-size: 16px;
+      }
+      @media only screen and (min-width: 481px){
+        .class3 {
+          font-size: 16px;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .class3 {
+          font-size: 16px;
+        }
+      }
+      #id-very-very-very-very-very-very-very-very-very-very-very-long {
+        font-size: 16px;
+      }
+      div[data-test-id]         {
+        font-size: 16px;
+      }
+      div[data-text=""] {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="class-very-very-very-very-very-very-very-very-very-very-very-long"
+    >
+      My class will be removed
+    </div>
+    <div class="class-very-very-long">
+      My class will be minified as a single char
+    </div>
+    <div class="class1 class2">My Class will be minified as two single chars</div>
+    <div class="class2 class3">
+      My first class will be reuse, and second one will be minified as a
+      single char
+      
+    </div>
+    <div id="id-very-very-very-very-very-very-very-very-very-very-very-long">
+      My id will be minified as a single char
+    </div>
+    <div data-text="hello world" data-test-id="123">
+      My first dataset attribute will be minified as `dt=""` and the second
+      one will be minified as `dti=""`
+    </div>
+    <div contenteditable="">My contenteditable attribute will be removed</div>
+  </body>
+</html>
