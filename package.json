@@ -1,6 +1,6 @@
 {
   "name": "email-minifier",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "compress",
     "compressor",
@@ -29,8 +29,14 @@
   "module": "dist/mjs/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/mjs/index.mjs",
-      "require": "./dist/cjs/index.cjs"
+      "import": {
+        "default": "./dist/mjs/index.mjs",
+        "types": "./dist/mjs/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/index.cjs",
+        "types": "./dist/cjs/index.d.ts"
+      }
     }
   },
   "scripts": {
