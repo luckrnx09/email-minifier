@@ -94,5 +94,12 @@ const options = {
 
 
 
-# License
+## Performance
+*TODO: Find some emails, add them to a the project, then minify and list here. Welcome to submit a PR*
+
+| Email                         | Original Size     | Minified Size | Elapsed time |
+|--------------------------------|-----------------|---------|------|
+|[Example 1](examples/emails/example1.txt)| 0kb | 0kb | 0ms |
+
+## License
 See [LICENSE](./LICENSE)
