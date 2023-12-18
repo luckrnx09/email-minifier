@@ -5,11 +5,11 @@
 
 EmailMinifier is a well-tested email minifier based on TypeScript for browser and Node.js
 
-As a quick start, you can [Try it online](https://luckrnx09.github.io/email-minifier/playground) - NOT READY, Welcome to submit a PR 🚀
+As a quick start, you can [Try it online](https://luckrnx09.github.io/email-minifier/playground) - NOT READY. Welcome to submit a PR 🚀
 
 ## Why not HTMLMinifier
 
-EmailMinifier is a great tool for compressing HTML. But email is different from HTML in many ways, compression of HTML is often not the best solution.
+HTMLMinifier is a great tool for compressing HTML. But email is different from HTML in many ways, compression of HTML is often not the best solution.
 - JavaScript code is not supported or required in emails.
 - The interactive behavior of the email is very limited, most HTML attributes are useless for the email but still load them when user open it.
 - Some email clients crop oversized emails (e.g. Gmail) and the style of the email is broken after cropping, which is extremely detrimental to marketing.
@@ -89,7 +89,7 @@ const options = {
     removeUnusedAttrs: [
         new RegExp('custom-test-id') // Remove `custom-test-id` attributes if they not used in style tags
     ]
-}
+};
 ```
 
 
