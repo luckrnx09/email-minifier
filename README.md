@@ -9,7 +9,7 @@ As a quick start, you can [Try it online](https://luckrnx09.github.io/email-mini
 
 ## Why not HTMLMinifier
 
-HTMLMinifier is a great tool for compressing HTML. But email is different from HTML in many ways, compression of HTML is often not the best solution.
+[HTMLMinifier](https://github.com/kangax/html-minifier) is a great tool for compressing HTML. But email is different from HTML in many ways, compression of HTML is often not the best solution.
 - JavaScript code is not supported or required in emails.
 - The interactive behavior of the email is very limited, most HTML attributes are useless for the email but still load them when user open it.
 - Some email clients crop oversized emails (e.g. Gmail) and the style of the email is broken after cropping, which is extremely detrimental to marketing.
