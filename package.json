@@ -1,6 +1,6 @@
 {
   "name": "email-minifier",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "compress",
     "compressor",
@@ -40,9 +40,10 @@
     }
   },
   "scripts": {
+    "performance": "ts-node ./scripts/performance.ts",
     "lint": "npx eslint . --fix",
-    "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs",
-    "test": "npm run lint && jest",
+    "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs && npm run performance",
+    "test": "npm run lint && jest && npm run performance",
     "publish": "npm run build && npm publish"
   },
   "repository": {
