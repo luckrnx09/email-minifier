@@ -95,11 +95,14 @@ const options = {
 
 
 ## Performance
-*TODO: Find some emails, add them to a the project, then minify and list here. Welcome to submit a PR*
 
-| Email                         | Original Size     | Minified Size | Elapsed time |
-|--------------------------------|-----------------|---------|------|
-|[Example 1](examples/emails/example1.txt)| 0kb | 0kb | 0ms |
+The following table shows the statistics in the Node.js environment
+| Email                         | Original Size | Minified Size | Elapsed time |
+| ----------------------------- | ------------- | ------------- | ------------ |
+|[Holiday Cheer]("examples%2Ftemplates%2FHoliday%20Cheer")|33.09kb|32.36kb|532.77ms|
+|[Membership Discount]("examples%2Ftemplates%2FMembership%20Discount")|104.00kb|37.97kb|94.75ms|
+|[Movies for Christmas]("examples%2Ftemplates%2FMovies%20for%20Christmas")|289.47kb|58.30kb|138.87ms|
+> The emails above are generated from [unlayer](https://dashboard.unlayer.com).
 
 ## License
 See [LICENSE](./LICENSE)
