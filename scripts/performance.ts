@@ -40,7 +40,7 @@ const dir = 'examples/templates';
     .join(`\n`);
   const sectionContent = [
     'The following table shows the statistics in the Node.js environment',
-    '| Email                         | Original Size | Minified Size | Elapsed time |',
+    '| Email                         | Original Size | Minified Size | Elapsed Time |',
     '| ----------------------------- | ------------- | ------------- | ------------ |',
     content,
     `> The emails above are generated from [unlayer](${source}).`,
