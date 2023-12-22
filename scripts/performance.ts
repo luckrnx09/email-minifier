@@ -29,13 +29,13 @@ const dir = 'examples/templates';
     .sort((a, b) => a.originalSize - b.originalSize)
     .map(
       (example) =>
-        `|[${example.filename}]("${encodeURIComponent(
+        `|[${
+          example.filename
+        }](https://github.com/luckrnx09/email-minifier/tree/main/${encodeURIComponent(
           example.url,
-        )}")|${example.originalSize.toFixed(
+        )})|${example.originalSize.toFixed(2)}kb|${example.minifiedSize.toFixed(
           2,
-        )}kb|${example.minifiedSize.toFixed(2)}kb|${example.elapsed.toFixed(
-          2,
-        )}ms|`,
+        )}kb|${example.elapsed.toFixed(2)}ms|`,
     )
     .join(`\n`);
   const sectionContent = [

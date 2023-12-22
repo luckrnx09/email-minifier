@@ -97,11 +97,11 @@ const options = {
 ## Performance
 
 The following table shows the statistics in the Node.js environment
-| Email                         | Original Size | Minified Size | Elapsed time |
+| Email                         | Original Size | Minified Size | Elapsed Time |
 | ----------------------------- | ------------- | ------------- | ------------ |
-|[Holiday Cheer]("examples%2Ftemplates%2FHoliday%20Cheer")|33.09kb|32.36kb|532.77ms|
-|[Membership Discount]("examples%2Ftemplates%2FMembership%20Discount")|104.00kb|37.97kb|94.75ms|
-|[Movies for Christmas]("examples%2Ftemplates%2FMovies%20for%20Christmas")|289.47kb|58.30kb|138.87ms|
+|[Holiday Cheer](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FHoliday%20Cheer)|33.09kb|32.36kb|756.04ms|
+|[Membership Discount](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FMembership%20Discount)|104.00kb|37.97kb|104.44ms|
+|[Movies for Christmas](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FMovies%20for%20Christmas)|289.47kb|58.30kb|184.62ms|
 > The emails above are generated from [unlayer](https://dashboard.unlayer.com).
 
 ## License
