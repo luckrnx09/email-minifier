@@ -41,6 +41,7 @@
   },
   "scripts": {
     "performance": "ts-node ./scripts/performance.ts",
+    "build:playground":"cd ./playground && pnpm i --no-frozen-lockfile && pnpm run build",
     "lint": "npx eslint ./lib --fix",
     "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs",
     "test": "npm run lint && jest",
