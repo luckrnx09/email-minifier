@@ -99,9 +99,9 @@ const options = {
 The following table shows the statistics in the Node.js environment
 | Email                         | Original Size | Minified Size | Elapsed Time |
 | ----------------------------- | ------------- | ------------- | ------------ |
-|[Holiday Cheer](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FHoliday%20Cheer)|33.09kb|32.36kb|756.04ms|
-|[Membership Discount](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FMembership%20Discount)|104.00kb|37.97kb|104.44ms|
-|[Movies for Christmas](https://github.com/luckrnx09/email-minifier/tree/main/examples%2Ftemplates%2FMovies%20for%20Christmas)|289.47kb|58.30kb|184.62ms|
+|[Holiday Cheer](https://github.com/luckrnx09/email-minifier/tree/main/templates%2FHoliday%20Cheer)|33.09kb|32.36kb|580.30ms|
+|[Membership Discount](https://github.com/luckrnx09/email-minifier/tree/main/templates%2FMembership%20Discount)|104.00kb|37.97kb|93.61ms|
+|[Movies for Christmas](https://github.com/luckrnx09/email-minifier/tree/main/templates%2FMovies%20for%20Christmas)|289.47kb|58.30kb|138.13ms|
 > The emails above are generated from [unlayer](https://dashboard.unlayer.com).
 
 ## License

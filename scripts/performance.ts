@@ -4,7 +4,7 @@ import { EmailMinifier } from '../lib/email-minifier';
 import { performance } from 'perf_hooks';
 
 const source = 'https://dashboard.unlayer.com';
-const dir = 'examples/templates';
+const dir = 'templates';
 
 (async () => {
   const examples = [];
