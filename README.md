@@ -5,7 +5,12 @@
 
 EmailMinifier is a well-tested email minifier based on TypeScript for browser and Node.js
 
-As a quick start, you can [Try it online](https://luckrnx09.github.io/email-minifier/playground) - NOT READY. Welcome to submit a PR 🚀
+
+
+https://github.com/luckrnx09/email-minifier/assets/113882203/2f2ad00e-73d8-437e-b357-7505b9d9e78a
+
+
+As a quick start, you can [Try it online](https://luckrnx09.github.io/email-minifier) 🚀
 
 ## Why not HTMLMinifier
 
