@@ -41,7 +41,7 @@
   },
   "scripts": {
     "performance": "ts-node ./scripts/performance.ts",
-    "lint": "npx eslint . --fix",
+    "lint": "npx eslint ./lib --fix",
     "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs",
     "test": "npm run lint && jest",
     "publish": "npm run build && npm publish"

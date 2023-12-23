@@ -1,8 +1,12 @@
 <template>
+    <h2 class="title">EmailMinifier Playground</h2>
+    <p class="document">See document at 
+        <a class="github" href="https://github.com/luckrnx09/email-minifier">Github</a>
+    </p>
     <div class="area-container">
         <div>
             <div class="text-area">
-                <p>Original Email HTML</p>
+                <p>Original Email HTML<span v-if="origin?.length>0"> - {{(origin.length/1024).toFixed(2)}}kb</span></p>
                 <textarea v-model="origin" placeholder="Put in your mail."></textarea>
             </div>
             <div class="html-area">
@@ -12,24 +16,24 @@
         </div>
         <div>
             <button @click="clickToMinified" :disabled="buttonStatus >= 2">
-                <span v-show="buttonStatus === 1">Minified Email</span>
-                <span v-show="buttonStatus === 2">Compressing</span>
+                <span v-show="buttonStatus === 1">Minify Email</span>
+                <span v-show="buttonStatus === 2">Processing</span>
                 <span v-show="buttonStatus === 3">Complete</span>
-                <span v-show="buttonStatus === 4">Faild</span>
+                <span v-show="buttonStatus === 4">Failed</span>
             </button>
             <p :show="warning" :style="{ visibility: warning ? 'visible' : 'hidden' }">Please input your email.</p>
         </div>
         <div>
             <div class="text-area">
                 <div class="text-area-title">
-                    <p>Minified Email HTML</p>
+                    <p>Minified Email HTML<span v-if="minified?.length>0"> - {{(minified.length/1024).toFixed(2)}}kb</span></p>
                     <div v-if="false">
                         <span>Compress: </span>
                         <div class="progress"></div>
                         <span>20%</span>
                     </div>
                 </div>
-                <textarea v-model="minified" placeholder="Minified in your mail." readonly></textarea>
+                <textarea v-model="minified" readonly></textarea>
             </div>
             <div class="html-area">
                 <p>Minified Email Preview</p>
@@ -40,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { EmailMinifier } from 'email-minifier';
 
 const buttonStatus = ref(1);
@@ -78,9 +82,26 @@ const clickToMinified = async () => {
         }
     }
 }
+
+watch(origin, () => {
+    minified.value = '';
+});
+
 </script>
 
 <style scoped>
+
+.title{
+    font-size: 32px;
+    text-align: center;
+    margin: 20px;
+}
+
+.document{
+    text-align: center;
+    margin-bottom: 14px;
+}
+
 .area-container {
     display: flex;
     flex-direction: column;
@@ -89,7 +110,7 @@ const clickToMinified = async () => {
     gap: 18px;
     width: 100%;
     height: 100%;
-    padding: 8px;
+    padding: 24px;
     box-sizing: border-box;
     font-size: 14px;
     color: #333;
