@@ -1,6 +1,6 @@
 {
   "name": "email-minifier",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "compress",
     "compressor",
@@ -41,7 +41,8 @@
   },
   "scripts": {
     "performance": "ts-node ./scripts/performance.ts",
-    "lint": "npx eslint . --fix",
+    "build:playground":"cd ./playground && pnpm i --no-frozen-lockfile && pnpm run build",
+    "lint": "npx eslint ./lib --fix",
     "build": "npm run lint && rm -rf dist && rollup --config --bundleConfigAsCjs",
     "test": "npm run lint && jest",
     "publish": "npm run build && npm publish"

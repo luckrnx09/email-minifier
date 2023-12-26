@@ -1,10 +1,17 @@
 <template>
+    <h2 class="title">EmailMinifier Playground</h2>
+    <p class="document">See document at
+        <a class="github" href="https://github.com/luckrnx09/email-minifier">Github</a>
+    </p>
     <div class="area-container">
         <div>
             <div class="text-area">
-                <p>Original Email HTML</p>
+                <p>Original Email HTML<span v-if="origin?.length > 0"> - {{ (origin.length / 1024).toFixed(2) }}kb</span>
+                </p>
                 <!-- <textarea v-model="origin" class="language-html" placeholder="Put in your mail."></textarea> -->
-                <Codemirror v-model:value="origin" :options="orgOptions" border ref="originRef" original-style />
+                <Codemirror ref="originRef" v-model:value="origin" :options="orgOptions" border
+                    placeholder="Put in your mail." />
+
             </div>
             <div class="html-area">
                 <p>Original Email Preview</p>
@@ -26,7 +33,8 @@
         <div>
             <div class="text-area">
                 <div class="text-area-title">
-                    <p>Minified Email HTML</p>
+                    <p>Minified Email HTML<span v-if="minified?.length > 0"> - {{ (minified.length / 1024).toFixed(2) }}kb</span>
+                    </p>
                     <div v-if="false">
                         <span>Compress: </span>
                         <div class="progress"></div>
@@ -34,7 +42,8 @@
                     </div>
                 </div>
                 <!-- <textarea v-model="minified" class="language-html" placeholder="Minified in your mail." readonly></textarea> -->
-                <Codemirror v-model:value="minified" :options="minOptions" border ref="minifiedRef" />
+                <Codemirror ref="minifiedRef" v-model:value="minified" :options="minOptions" border
+                    placeholder="Minified in your mail." />
             </div>
             <div class="html-area">
                 <p>Minified Email Preview</p>
@@ -45,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { onUnmounted, reactive, ref, Ref } from "vue";
+import { onUnmounted, reactive, ref, Ref, watch } from "vue";
 import { EmailMinifier } from 'email-minifier';
 
 import Codemirror, { CmComponentRef } from "codemirror-editor-vue3"
@@ -114,12 +123,27 @@ const clearContent = () => {
     minified.value = "";
 }
 
+watch(origin, () => {
+    minified.value = '';
+});
+
 onUnmounted(() => {
     clearTimer();
 })
 </script>
 
 <style scoped>
+.title {
+    font-size: 32px;
+    text-align: center;
+    margin: 20px;
+}
+
+.document {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
 .area-container {
     display: flex;
     flex-direction: column;
@@ -452,5 +476,4 @@ onUnmounted(() => {
     .area-container .html-area {
         height: 50%;
     }
-}
-</style>
+}</style>
