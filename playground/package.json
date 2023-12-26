@@ -11,7 +11,7 @@
   "dependencies": {
     "codemirror": ">=5.64.0 <6",
     "codemirror-editor-vue3": "^2.4.1",
-    "email-minifier": "^1.0.2",
+    "email-minifier": "latest",
     "vue": "^3.3.11"
   },
   "devDependencies": {

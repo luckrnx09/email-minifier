@@ -8,9 +8,8 @@
             <div class="text-area">
                 <p>Original Email HTML<span v-if="origin?.length > 0"> - {{ (origin.length / 1024).toFixed(2) }}kb</span>
                 </p>
-                <!-- <textarea v-model="origin" class="language-html" placeholder="Put in your mail."></textarea> -->
                 <Codemirror ref="originRef" v-model:value="origin" :options="orgOptions" border
-                    placeholder="Put in your mail." />
+                    placeholder="Paste your email here." />
 
             </div>
             <div class="html-area">
@@ -21,28 +20,22 @@
         <div>
             <div class="btns">
                 <button @click="clickToMinified" :disabled="buttonStatus >= 2">
-                    <span v-show="buttonStatus === 1">Minified Email</span>
+                    <span v-show="buttonStatus === 1">Minify Email</span>
                     <span v-show="buttonStatus === 2">Compressing</span>
                     <span v-show="buttonStatus === 3">Complete</span>
-                    <span v-show="buttonStatus === 4">Faild</span>
+                    <span v-show="buttonStatus === 4">Failed</span>
                 </button>
-                <button v-if="origin" @click="clearContent"><span>Clear Textarea</span></button>
+                <button v-if="origin" @click="clearContent"><span>Clear</span></button>
             </div>
-            <p :show="warning" :style="{ visibility: warning ? 'visible' : 'hidden' }">Please input your email.</p>
+            <p :show="warning" :style="{ visibility: warning ? 'visible' : 'hidden' }">Please paste your email.</p>
         </div>
         <div>
             <div class="text-area">
                 <div class="text-area-title">
                     <p>Minified Email HTML<span v-if="minified?.length > 0"> - {{ (minified.length / 1024).toFixed(2) }}kb</span>
                     </p>
-                    <div v-if="false">
-                        <span>Compress: </span>
-                        <div class="progress"></div>
-                        <span>20%</span>
-                    </div>
                 </div>
-                <!-- <textarea v-model="minified" class="language-html" placeholder="Minified in your mail." readonly></textarea> -->
-                <Codemirror ref="minifiedRef" v-model:value="minified" :options="minOptions" border
+            <Codemirror ref="minifiedRef" v-model:value="minified" :options="minOptions" border
                     placeholder="Minified in your mail." />
             </div>
             <div class="html-area">
@@ -106,7 +99,7 @@ const clickToMinified = async () => {
 const timer: Ref<number | null> = ref(null);
 const buttonStatusControl = (val: number) => {
     if (timer.value) clearTimeout(timer.value);
-    timer.value = setTimeout(() => {
+    timer.value = window.setTimeout(() => {
         buttonStatus.value = val;
         warning.value = false;
     }, 3000)
@@ -152,7 +145,7 @@ onUnmounted(() => {
     gap: 18px;
     width: 100%;
     height: 100%;
-    padding: 8px;
+    padding: 48px 24px;
     box-sizing: border-box;
     font-size: 14px;
     color: #333;
@@ -175,7 +168,6 @@ onUnmounted(() => {
 }
 
 @keyframes flashing {
-
     0%,
     40%,
     80% {
@@ -265,29 +257,6 @@ onUnmounted(() => {
     gap: 18px;
 }
 
-.area-container .text-area-title .progress {
-    width: 18em;
-    height: 8px;
-    background-color: hwb(0 9% 13% / 0.05);
-    border-radius: 4px;
-    position: relative;
-}
-
-.area-container .text-area-title .progress::after {
-    content: '';
-    display: block;
-    width: 80%;
-    height: 8px;
-    background-color: hsl(101, 63%, 60%);
-    background: repeating-linear-gradient(-45deg, hwb(145 18% 20%) 25%, hwb(145 15% 32%) 0, hwb(145 15% 32%) 50%,
-            hwb(145 18% 20%) 0, hwb(145 18% 20%) 75%, hwb(145 15% 32%) 0);
-    background-size: 16px 16px;
-    border-radius: 4px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
-}
 
 .area-container .btns {
     display: flex;
@@ -396,7 +365,7 @@ onUnmounted(() => {
     }
 }
 
-@keyframes btn_botton {
+@keyframes btn_bottom {
     0% {
         background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
     }
@@ -439,7 +408,7 @@ onUnmounted(() => {
 
 .area-container .btns button span:nth-of-type(3):after {
     display: block;
-    animation: btn_botton 1s 1 forwards;
+    animation: btn_bottom 1s 1 forwards;
     bottom: -50%;
     background-image: radial-gradient(circle, #ff0081 20%, transparent 20%),
         radial-gradient(circle, #ff0081 20%, transparent 20%),
