@@ -443,6 +443,7 @@ onUnmounted(() => {
 
     .area-container .text-area,
     .area-container .html-area {
+        width: 100%;
         height: 50%;
     }
 }</style>
