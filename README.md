@@ -112,5 +112,11 @@ The following table shows the statistics in the Node.js environment
 |[Movies for Christmas](https://github.com/luckrnx09/email-minifier/tree/main/templates%2FMovies%20for%20Christmas)|289.47kb|58.30kb|138.13ms|
 > The emails above are generated from [unlayer](https://dashboard.unlayer.com).
 
+## Contributors
+
+<a href="https://github.com/luckrnx09/email-minifier/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=luckrnx09/email-minifier" />
+</a>
+
 ## License
 See [LICENSE](./LICENSE)
